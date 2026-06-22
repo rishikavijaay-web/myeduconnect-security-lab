@@ -24,8 +24,11 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $user['username'];
             $_SESSION['role'] = $user['role'];
             $_SESSION['full_name'] = $user['full_name'];
-
-            $message = "Welcome " . htmlspecialchars($user['full_name']) . " (" . htmlspecialchars($user['role']) . ")";
+            header("Location: index.php");
+          exit();
+$_SESSION['login_success'] = "Login successful. Welcome " . $user['username'] . " (" . $user['role'] . ")";
+header("Location: index.php");
+exit();
         } else {
             $message = "Invalid username or password";
         }
@@ -39,20 +42,53 @@ if (isset($_POST['login'])) {
 
 <!DOCTYPE html>
 <html>
-<body>
-<h1>MyEduConnect Login</h1>
+<head>
+    <title>MyEduConnect Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
 
-<form method="POST">
-    Username:
-    <input type="text" name="username" required><br><br>
+<div class="login-card">
 
-    Password:
-    <input type="password" name="password" required><br><br>
+    <div class="login-left">
+        <h1>Welcome to MyEduConnect</h1>
+<?php
+session_start();
+if (isset($_SESSION['login_success'])) {
+    echo "<div class='success-message'>" . htmlspecialchars($_SESSION['login_success']) . "</div>";
+    unset($_SESSION['login_success']);
+}
+?>
+        <p>
+            A secure learning portal for students, teachers and administrators.
+            This platform supports login, course browsing, enrolment, profiles,
+            comments and admin management.
+        </p>
 
-    <input type="submit" name="login" value="Login">
-</form>
+        <div class="login-shape shape1"></div>
+        <div class="login-shape shape2"></div>
+        <div class="login-shape shape3"></div>
+    </div>
 
-<p><?php echo $message; ?></p>
+    <div class="login-right">
+        <h2>USER LOGIN</h2>
+
+        <form method="POST">
+            <label>Username</label>
+            <input type="text" name="username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" required>
+
+            <input type="submit" name="login" value="LOGIN">
+        </form>
+
+        <div class="login-message">
+            <?php echo $message; ?>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>

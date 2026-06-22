@@ -1,2 +1,3 @@
 Options -Indexes
 RedirectMatch 404 /\.git
+ErrorDocument 403 /myeduconnect/forbidden.php

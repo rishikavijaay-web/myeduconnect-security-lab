@@ -3,8 +3,7 @@ session_start();
 include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: forbidden.php");
-    exit();
+    die("Access denied. Please login first.");
 }
 
 $user_id = $_SESSION['user_id'];
@@ -24,45 +23,16 @@ if ($result && $result->num_rows === 1) {
 $stmt->close();
 ?>
 
-<!DOCTYPE html>
 <html>
-<head>
-    <title>MyEduConnect Profile</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<body>
 
-<body class="app-page">
-
-<div class="app-navbar">
-    <div class="app-logo">MyEduConnect</div>
-    <div class="app-nav">
-        <a href="index.php">Home</a>
-        <a href="courses.php">Courses</a>
-        <a href="comments.php">Comments</a>
-        <a href="profile.php">Profile</a>
-        <a href="admin.php">Admin</a>
-        <a href="login.php">Login</a>
-        <a href="logout.php">Logout</a>    
-</div>
-</div>
-
-<div class="app-container">
 <h1>User Profile</h1>
-
-<div class="app-card">
 
 <p><b>ID:</b> <?php echo htmlspecialchars($user['id']); ?></p>
 <p><b>Username:</b> <?php echo htmlspecialchars($user['username']); ?></p>
 <p><b>Role:</b> <?php echo htmlspecialchars($user['role']); ?></p>
 <p><b>Full Name:</b> <?php echo htmlspecialchars($user['full_name']); ?></p>
 <p><b>Email:</b> <?php echo htmlspecialchars($user['email']); ?></p>
-
-</div>
-</div>
-
-<div class="app-footer">
-    MyEduConnect Security Lab | CCS6324 Ethical Hacking Assignment
-</div>
 
 </body>
 </html>
