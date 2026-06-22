@@ -1,7 +1,12 @@
 <?php
+session_start();
 include 'db.php';
 
-$users = $conn->query("SELECT * FROM users");
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+    die("Access denied. Admins only.");
+}
+
+$result = $conn->query("SELECT id, username, role FROM users");
 ?>
 
 <html>
@@ -11,17 +16,17 @@ $users = $conn->query("SELECT * FROM users");
 
 <table border="1">
 <tr>
-<th>ID</th>
-<th>Username</th>
-<th>Role</th>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Role</th>
 </tr>
 
 <?php
-while($row = $users->fetch_assoc()){
+while ($row = $result->fetch_assoc()) {
     echo "<tr>";
-    echo "<td>".$row['id']."</td>";
-    echo "<td>".$row['username']."</td>";
-    echo "<td>".$row['role']."</td>";
+    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+    echo "<td>" . htmlspecialchars($row['role']) . "</td>";
     echo "</tr>";
 }
 ?>

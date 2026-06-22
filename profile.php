@@ -1,21 +1,38 @@
 <?php
+session_start();
 include 'db.php';
 
-$id = $_GET['id'];
+if (!isset($_SESSION['user_id'])) {
+    die("Access denied. Please login first.");
+}
 
-$result = $conn->query("SELECT * FROM users WHERE id=$id");
-$user = $result->fetch_assoc();
+$user_id = $_SESSION['user_id'];
+
+$stmt = $conn->prepare("SELECT id, username, role, full_name, email FROM users WHERE id = ?");
+$stmt->bind_param("i", $user_id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+if ($result && $result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+} else {
+    die("Profile not found.");
+}
+
+$stmt->close();
 ?>
 
 <html>
 <body>
 
-<h1>Student Profile</h1>
+<h1>User Profile</h1>
 
-<p><b>Name:</b> <?php echo $user['full_name']; ?></p>
-<p><b>Username:</b> <?php echo $user['username']; ?></p>
-<p><b>Email:</b> <?php echo $user['email']; ?></p>
-<p><b>Role:</b> <?php echo $user['role']; ?></p>
+<p><b>ID:</b> <?php echo htmlspecialchars($user['id']); ?></p>
+<p><b>Username:</b> <?php echo htmlspecialchars($user['username']); ?></p>
+<p><b>Role:</b> <?php echo htmlspecialchars($user['role']); ?></p>
+<p><b>Full Name:</b> <?php echo htmlspecialchars($user['full_name']); ?></p>
+<p><b>Email:</b> <?php echo htmlspecialchars($user['email']); ?></p>
 
 </body>
 </html>

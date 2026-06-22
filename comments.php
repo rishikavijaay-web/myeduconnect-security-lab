@@ -1,14 +1,15 @@
 <?php
+session_start();
 include 'db.php';
 
-if(isset($_POST['submit'])){
+if (isset($_POST['submit'])) {
+    $comment = $_POST['comment'];
 
-    $comment = mysqli_real_escape_string($conn, $_POST['comment']);
-
-    $sql = "INSERT INTO comments(user_id, comment)
-            VALUES(2, '$comment')";
-
-    $conn->query($sql);
+    $stmt = $conn->prepare("INSERT INTO comments(user_id, comment) VALUES(?, ?)");
+    $user_id = 2;
+    $stmt->bind_param("is", $user_id, $comment);
+    $stmt->execute();
+    $stmt->close();
 }
 
 $result = $conn->query("SELECT * FROM comments");
@@ -28,9 +29,9 @@ $result = $conn->query("SELECT * FROM comments");
 <hr>
 
 <?php
-if($result){
-    while($row = $result->fetch_assoc()){
-        echo $row['comment'] . "<br>";
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        echo htmlspecialchars($row['comment'], ENT_QUOTES, 'UTF-8') . "<br>";
     }
 }
 ?>
