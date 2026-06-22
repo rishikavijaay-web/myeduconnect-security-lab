@@ -929,3 +929,46 @@ tr:nth-child(even) {
 .nav a[href="logout.php"]:hover {
     color: #991b1b !important;
 }
+/* ADMIN DASHBOARD */
+.admin-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 38px auto;
+}
+
+.admin-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.admin-card h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.admin-table th {
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 14px;
+    text-align: left;
+}
+
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.admin-table tr:nth-child(even) {
+    background: #f8fafc;
+}
