@@ -53,48 +53,23 @@ if (isset($_POST['register'])) {
     </div>
 </div>
 
-<div class="register-hero">
-    <h1>Create Your Account</h1>
-    <p>Register as a student and start using the MyEduConnect learning portal.</p>
-</div>
+<div class="register-wrapper">
 
-<div class="register-shell">
-
-    <div class="register-left-card">
-        <h2>Student Access</h2>
+    <div class="register-info">
+        <h1>Create Your Account</h1>
         <p>
-            Create a student account to browse courses, enrol into available learning modules,
-            submit comments, and access your protected profile.
+            Register as a student to access the MyEduConnect learning portal,
+            browse courses, submit comments, and manage your profile.
         </p>
 
-        <div class="reg-feature-box">
-            <span>01</span>
-            <div>
-                <strong>Secure Registration</strong>
-                <p>Passwords are stored using bcrypt hashing.</p>
-            </div>
-        </div>
+        <div class="register-feature">Secure password hashing with bcrypt</div>
+        <div class="register-feature">Student role assigned automatically</div>
+        <div class="register-feature">Protected profile and admin access control</div>
 
-        <div class="reg-feature-box">
-            <span>02</span>
-            <div>
-                <strong>Student Role</strong>
-                <p>New accounts are automatically assigned the student role.</p>
-            </div>
-        </div>
-
-        <div class="reg-feature-box">
-            <span>03</span>
-            <div>
-                <strong>Protected Access</strong>
-                <p>Profile and admin areas are controlled using session-based access control.</p>
-            </div>
-        </div>
-
-        <a class="reg-login-link" href="login.php">Already registered? Login</a>
+        <a href="login.php" class="register-link-btn">Already have an account? Login</a>
     </div>
 
-    <div class="register-form-card">
+    <div class="register-card">
         <h2>Student Registration</h2>
 
         <?php if (!empty($message)) { ?>
@@ -111,7 +86,7 @@ if (isset($_POST['register'])) {
             <input type="text" name="username" placeholder="Choose a username" required>
 
             <label>Email</label>
-            <input type="email" name="email" placeholder="Enter your email address" required>
+            <input type="email" name="email" placeholder="Enter your email" required>
 
             <label>Password</label>
             <input type="password" name="password" placeholder="Create a password" required>

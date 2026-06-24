@@ -11,6 +11,7 @@
     <div class="app-logo">MyEduConnect</div>
     <div class="app-nav">
         <a href="login.php">Login</a>
+<a href="register.php">Register</a>
         <a href="index.php">Home</a>
         <a href="courses.php">Courses</a>
         <a href="enrol.php">Enrol</a>
@@ -35,6 +36,7 @@
 
         <a class="app-btn" href="courses.php">Browse Courses</a>
         <a class="app-btn" href="login.php">Login</a>
+        <a href="register.php" class="btn">Register</a>   
     </div>
 
     <div class="app-card">

@@ -972,3 +972,337 @@ tr:nth-child(even) {
 .admin-table tr:nth-child(even) {
     background: #f8fafc;
 }
+/* COMMENTS PAGE */
+.comments-wrapper {
+    width: 90%;
+    max-width: 1000px;
+    margin: 38px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.comments-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.comments-card h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+}
+
+.comments-card label {
+    display: block;
+    font-weight: bold;
+    margin-top: 14px;
+    color: #374151;
+}
+
+.comments-card textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 14px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    border-radius: 10px;
+    margin-top: 8px;
+    margin-bottom: 16px;
+    outline: none;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.comments-card input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.comment-item {
+    background: #f8fafc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.comment-item strong {
+    color: #2563eb;
+}
+
+.comment-item p {
+    color: #374151;
+    margin-bottom: 0;
+    word-break: break-word;
+}
+/* REGISTER PAGE */
+.register-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+}
+
+.register-wrapper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 55px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 34px;
+    align-items: stretch;
+}
+
+.register-info,
+.register-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 38px;
+    box-shadow: 0 18px 42px rgba(0,0,0,0.10);
+}
+
+.register-info {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    color: white;
+}
+
+.register-info h1 {
+    font-size: 40px;
+    color: white;
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.register-info p {
+    line-height: 1.6;
+    font-size: 16px;
+    opacity: 0.92;
+}
+
+.register-feature {
+    background: rgba(255,255,255,0.16);
+    padding: 14px 16px;
+    border-radius: 12px;
+    margin-top: 14px;
+    font-weight: 700;
+}
+
+.register-link-btn {
+    display: inline-block;
+    margin-top: 28px;
+    background: white;
+    color: #1e3a8a;
+    padding: 13px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.register-card h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+    margin-bottom: 22px;
+}
+
+.register-card label {
+    display: block;
+    font-weight: 800;
+    color: #374151;
+    margin-top: 14px;
+    margin-bottom: 7px;
+}
+
+.register-card input[type="text"],
+.register-card input[type="email"],
+.register-card input[type="password"] {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.register-card input[type="text"]:focus,
+.register-card input[type="email"]:focus,
+.register-card input[type="password"]:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+}
+
+.register-card input[type="submit"] {
+    width: 100%;
+    margin-top: 12px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.register-card input[type="submit"]:hover {
+    opacity: 0.92;
+}
+/* REGISTER PAGE - FINAL MODERN UI */
+.register-page {
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+.register-hero {
+    background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+    padding: 58px 40px;
+    text-align: center;
+    color: white;
+}
+
+.register-hero h1 {
+    color: white;
+    font-size: 42px;
+    margin: 0 0 12px 0;
+    font-weight: 900;
+}
+
+.register-hero p {
+    margin: 0;
+    font-size: 17px;
+    opacity: 0.92;
+}
+
+.register-shell {
+    width: 90%;
+    max-width: 1100px;
+    margin: 42px auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 30px;
+    align-items: stretch;
+}
+
+.register-left-card,
+.register-form-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 36px;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.register-left-card h2,
+.register-form-card h2 {
+    margin-top: 0;
+    color: #1e3a8a;
+    font-size: 30px;
+}
+
+.register-left-card > p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.reg-feature-box {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #f5f3ff;
+    border: 1px solid #ede9fe;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+}
+
+.reg-feature-box span {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.reg-feature-box strong {
+    color: #1f2937;
+    font-size: 16px;
+}
+
+.reg-feature-box p {
+    margin: 5px 0 0 0;
+    color: #6b7280;
+    line-height: 1.4;
+}
+
+.reg-login-link {
+    margin-top: 18px;
+    display: inline-block;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    color: white;
+    padding: 13px 22px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.register-form-card form {
+    margin-top: 12px;
+}
+
+.register-form-card label {
+    display: block;
+    font-weight: 800;
+    color: #374151;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+.register-form-card input[type="text"],
+.register-form-card input[type="email"],
+.register-form-card input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    border-radius: 12px;
+    box-sizing: border-box;
+    outline: none;
+    font-size: 15px;
+}
+
+.register-form-card input[type="text"]:focus,
+.register-form-card input[type="email"]:focus,
+.register-form-card input[type="password"]:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    background: white;
+}
+
+.register-form-card input[type="submit"] {
+    width: 100%;
+    margin-top: 24px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border: none;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.register-form-card input[type="submit"]:hover,
+.reg-login-link:hover {
+    opacity: 0.92;
+}
